@@ -20,9 +20,9 @@ internal partial class PublisherForm : Form
         if (InputDataFieldsValid())
         {
             var data = new EventInvoiceData(
-            InvoiceValueInput.Value,
-            InvoiceProcessor.CalculateTax(InvoiceValueInput.Value),
-            InvoiceProcessor.NormalizeInvoiceNumber(InvoiceNumberInput.Text));
+                InvoiceValueInput.Value,
+                InvoiceProcessor.CalculateTax(InvoiceValueInput.Value),
+                InvoiceProcessor.NormalizeInvoiceNumber(InvoiceNumberInput.Text));
 
             EventBroker.Publish(data);
 
